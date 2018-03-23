@@ -29,7 +29,7 @@ const displayDoctors = function(response) {
 
       let website = (website === undefined) ? "None" : response.data[i].practices[0].website;
 
-      $('#results').append(" " + '<li>' + doctor + ": is accepting new patients: " + address + '</li>');
+      $('#results').append(`<h3>${doctor}</h3><br><p>${address}</p><br><p>${phone[0].number}</p><br><p>${website}</p>`);
 
     }
   }
