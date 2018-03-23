@@ -1,0 +1,11 @@
+body {
+  background-image: url("https://images6.alphacoders.com/461/461979.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#header {
+  font-family: 'Molengo', sans-serif;
+}

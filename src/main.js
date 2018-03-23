@@ -1,4 +1,5 @@
-import { doctorAPI } from './js/doctor-api.js'
+import { doctorAPI } from './js/doctor-api.js';
+import './styles.css' ;
 
 const displayDoctors = function(response) {
   if (response.data.length == 0) {
