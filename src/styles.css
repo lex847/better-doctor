@@ -26,3 +26,7 @@ input {
   text-align: center;
   font-family: 'Molengo', sans-serif;
 }
+
+#results {
+  display: none;
+}

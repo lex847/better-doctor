@@ -11,8 +11,8 @@ const displayDoctors = function(response) {
       let doctor = response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
 
 
-      $('.results').append(" " + '<li>' + doctor + '</li>');
-    
+      $('#results').append(" " + '<li>' + doctor + '</li>');
+
     }
   }
 }
@@ -30,6 +30,8 @@ $(document).ready(function() {
     let newDoctorAPI = new doctorAPI(medicalIssue);
 
     newDoctorAPI.getDoctor(medicalIssue, displayDoctors);
+
+    $("#results").show();
 
   })
 });
