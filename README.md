@@ -20,8 +20,6 @@ This application demonstrates asynchrony and calling the BetterDoctor API using 
 | If the API call results in an error (any message not a 200 OK), the application should return a notification that states what the error is. | Click button | Text |
 | If the query response doesn't include any doctors (for instance, if no doctors meet the search criteria), the application should return a notification that states that no doctors meet the criteria. | Click button | Text |
 
-<kbd><img src="src/img/xxx.jpg" alt=""></kbd>
-
 ## Technologies Used
 ------------
 

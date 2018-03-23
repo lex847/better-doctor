@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://images6.alphacoders.com/461/461979.png");
+  background: url("https://images6.alphacoders.com/461/461979.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -7,5 +7,22 @@ body {
 }
 
 #header {
+  font-family: 'Molengo', sans-serif;
+  font-size: 60px;
+}
+
+.results {
+  font-family: 'Molengo', sans-serif;
+  font-family: 'Molengo', sans-serif;
+}
+
+#button {
+  border-radius: 4px;
+  font-family: 'Molengo', sans-serif;
+}
+
+input {
+  border-radius: 4px;
+  text-align: center;
   font-family: 'Molengo', sans-serif;
 }
