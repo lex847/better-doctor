@@ -2,12 +2,11 @@ import { doctorAPI } from './js/doctor-api.js'
 
 const displayDoctors = function(response) {
   if (response.data.length == 0) {
-    console.log(response.data);
     $('.results').text("Sorry, there are no doctors that fit the search criteria.");
   } else {
-    for (let i = 0; i < response.data.length; i ++) {
-      let doctors = response.data[i];
-      console.log(response.data[i]);
+    for (let i = 0; i < response.data.practices.length; i ++) {
+      let doctors = response.data.practices.doctors[i];
+
     $('.results').append(" " + '<li>' + doctors + '</li>');
     }
   }
@@ -15,15 +14,15 @@ const displayDoctors = function(response) {
 
 $(document).ready(function() {
 
-  let newDoctorAPI = new doctorAPI(location);
+  let newDoctorAPI = new doctorAPI();
 
   $("#user-form").submit(function(event) {
     event.preventDefault();
 
-    const location = $("#location").val();
+    const medicalIssue = $("#medicalIssue").val();
     $("#user-form").hide();
 
-    newDoctorAPI.getDoctor(location, displayDoctors);
+    newDoctorAPI.getDoctor(medicalIssue, displayDoctors);
 
     $(".results").show();
   })
