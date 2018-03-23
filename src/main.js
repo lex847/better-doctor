@@ -7,8 +7,7 @@ const displaySpecialty = function(response) {
     } else {
       for(let i = 0; i < response.data.length; i++) {
 
-      let doctor = response.data[i].profile.first_name + " " + response.data[i].profile.last_name + " " + response.data[i].profile[i].specialties;
-      console.log(response.data[i].profile[i].specialties);
+      let doctor = response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
       let newPatients = response.data[i].practices[i].accepts_new_patients;
 
       $('#results').append(" " + '<li>' + doctor + ": is accepting new patients: " + newPatients + '</li>');
@@ -24,9 +23,13 @@ const displayDoctors = function(response) {
       for(let i = 0; i < response.data.length; i++) {
 
       let doctor = response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
-      let newPatients = response.data[i].practices[i].accepts_new_patients;
+      let address = response.data[i].practices[0].visit_address.street + response.data[i].practices[0].visit_address.city + response.data[i].practices[0].visit_address.state + response.data[i].practices[0].visit_address.zip;
 
-      $('#results').append(" " + '<li>' + doctor + ": is accepting new patients: " + newPatients + '</li>');
+      let phone = response.data[i].practices[0].phones;
+
+      let website = (website === undefined) ? "None" : response.data[i].practices[0].website;
+
+      $('#results').append(" " + '<li>' + doctor + ": is accepting new patients: " + address + '</li>');
 
     }
   }
@@ -39,15 +42,15 @@ $(document).ready(function() {
     event.preventDefault();
 
     const medicalIssue = $("#medicalIssue").val();
-    const doctorSearch = $("#doctorSearch").val();
+    const doctorName = $("#doctorName").val();
 
     $("#user-form").hide();
 
-    let newDoctorAPI = new doctorAPI(medicalIssue);
+    let newDoctorAPI = new doctorAPI(medicalIssue, doctorSearch);
 
     newDoctorAPI.getSpecialty(medicalIssue, displaySpecialty);
 
-    newDoctorAPI.getDoctorName(doctorSearch, displayDoctors);
+    newDoctorAPI.getDoctorName(doctorName, displayDoctors);
 
     $("#results").show();
 
