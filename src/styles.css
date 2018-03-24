@@ -21,12 +21,22 @@ body {
   font-family: 'Molengo', sans-serif;
 }
 
+form {
+  font-family: 'Molengo', sans-serif;
+  font-size: 20px;
+}
+
 input {
   border-radius: 4px;
   text-align: center;
-  font-family: 'Molengo', sans-serif;
+  /*font-family: 'Molengo', sans-serif;*/
 }
 
 #results {
   display: none;
+}
+
+#results h3 {
+
+  font-family: 'Molengo', sans-serif;
 }
