@@ -49,7 +49,7 @@ Install required npm packages and dependencies:
 $ npm install
 $ npm run build
 ```
-Register at XXX to receive API key at URL below. Place in .env file.
+Register at https://developer.betterdoctor.com/ to receive API key at URL below. Place in .env file.
 
 ```
 https://developer.betterdoctor.com/
