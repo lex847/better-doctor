@@ -3,7 +3,7 @@ import './styles.css';
 
 const displaySpecialty = function(response) {
   if (response.data.length == 0) {
-    $('.results').text("Sorry, there are no doctors specializing in that area.");
+    $('.results').text("There are no doctors specializing in that area.");
     } else {
       for(let i = 0; i < response.data.length; i++) {
 
@@ -18,6 +18,7 @@ const displaySpecialty = function(response) {
         `<ol>
         <h3>${doctor}</h3>
         <br>
+        <h3>Is Accepting New Patients?:</h3>
         <h3>${newPatients}</h3>
         <br>
         <p>${address}</p>
@@ -33,7 +34,7 @@ const displaySpecialty = function(response) {
 
 const displayDoctors = function(response) {
   if (response.data.length == 0) {
-    $('.results').text("Sorry, there are no doctors with that name.");
+    $('.results').text("There are no doctors with that name.");
     } else {
       for(let i = 0; i < response.data.length; i++) {
 
@@ -43,14 +44,14 @@ const displayDoctors = function(response) {
       let address = response.data[i].practices[0].visit_address.street + response.data[i].practices[0].visit_address.city + response.data[i].practices[0].visit_address.state + response.data[i].practices[0].visit_address.zip;
 
       let phone = response.data[i].practices[0].phones;
-
       let website = (website === undefined) ? "None" : response.data[i].practices[0].website;
 
       $('#results').append(
         `<ol>
         <h3>${doctor}</h3>
         <br>
-        <h3>${doctor}</h3>
+        <h3>Is Accepting New Patients?:</h3>
+        <h3>${newPatients}</h3>
         <br>
         <p>${address}</p>
         <br>
@@ -71,14 +72,12 @@ $(document).ready(function() {
     event.preventDefault();
 
     const medicalIssue = $("#medicalIssue").val();
-
+    $("#medicalIssue").val();
     $("#medical-issue-form").hide();
     $("#doctor-name-form").hide();
 
     let newDoctorAPI = new doctorAPI(medicalIssue);
-
     newDoctorAPI.getSpecialty(medicalIssue, displaySpecialty);
-
     $("#results").show();
   });
 
@@ -87,15 +86,12 @@ $(document).ready(function() {
     event.preventDefault();
 
     const doctorName = $("#doctorName").val();
-
+    $("#doctorName").val();
     $("#medical-issue-form").hide();
     $("#doctor-name-form").hide();
 
     let newDoctorAPI = new doctorAPI(doctorName);
-
     newDoctorAPI.getDoctorName(doctorName, displayDoctors);
-
     $("#results").show();
-
   });
 });

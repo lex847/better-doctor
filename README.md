@@ -8,17 +8,17 @@
 
 # Description
 
-This application demonstrates asynchrony and calling the BetterDoctor API using JavaScript.
+This application demonstrates asynchrony and calling the BetterDoctor API using JavaScript. Returns a list of doctors matching a medical illness or doctor name search.
 
 ## Behavior
 
 | Spec | Input | Output |
 | :---------------| :---------------| :---------------|
-| Returns a list of doctors in the Portland area based on the medical search query. | Click button | Text |
-| Returns a list of doctors in the Portland area based on the name search query. | Click button | Text |
-| If the query response includes any doctors, the following information should be included about each doctor: first name, last name, address, phone number, website and whether or not the doctor is accepting new patients | Click button | Text |
-| If the API call results in an error (any message not a 200 OK), the application should return a notification that states what the error is. | Click button | Text |
-| If the query response doesn't include any doctors (for instance, if no doctors meet the search criteria), the application should return a notification that states that no doctors meet the criteria. | Click button | Text |
+| Returns a list of doctors in the Portland area based on the medical search query. | "headache" | Returns list of doctors or "Sorry, there are no doctors specializing in that area." |
+| Returns a list of doctors in the Portland area based on the name search query. | "Hannah" | Returns list or "There are no doctors with that name." |
+| If the query response includes any doctors, the following information should be included about each doctor: first name, last name, address, phone number, website and whether or not the doctor is accepting new patients | "Lorem" | Lorem Ipsum, Is Accpeting New Patients?: Yes, address, phone number, website |
+| If the API call results in an error (any message not a 200 OK), the application should return a notification that states what the error is. | Click Submit | There was an error processing your request: 400 error handling your request - Bad Request. Please try again. |
+| If the query response doesn't include any doctors (for instance, if no doctors meet the search criteria), the application should return a notification that states that no doctors meet the criteria. | "Big Bird" | There are no doctors with that name. |
 
 ## Technologies Used
 ------------
