@@ -6,9 +6,11 @@ export class doctorAPI {
   }
 
   getSpecialty(medicalIssue, displaySpecialty) {
-    const apiKey = process.env.exports.apiKey;
+    console.log("this line reached");
+    // const apiKey = process.env.exports.apiKey;
+    console.log("apiKey reached");
 
-    $.get(`https://api.betterdoctor.com/2016-03-01/doctors?query=${medicalIssue}&location=or-portland&user_location=45.5231%2C%20-122.6765&sort=best-match-asc&skip=0&limit=25&user_key=${apiKey}`).then(function(response) {
+    $.get(`https://api.betterdoctor.com/2016-03-01/doctors?query=${medicalIssue}&location=or-portland&user_location=45.5231%2C%20-122.6765&sort=best-match-asc&skip=0&limit=25&user_key=4c7deee526e1bdd9d202c9e28cd0d0ac`).then(function(response) {
         displaySpecialty(response);
       })
       .fail(function(error) {
@@ -17,9 +19,9 @@ export class doctorAPI {
   }
 
   getDoctorName(doctorName, displayDoctors) {
-    const apiKey = process.env.exports.apiKey;
+    // const apiKey = process.env.exports.apiKey;
 
-    $.get(`https://api.betterdoctor.com/2016-03-01/doctors?name=${doctorName}&location=or-portland&user_location=45.5231%2C%20-122.6765&sort=best-match-asc&skip=0&limit=25&user_key=${apiKey}`).then(function(response) {
+    $.get(`https://api.betterdoctor.com/2016-03-01/doctors?name=${doctorName}&location=or-portland&user_location=45.5231%2C%20-122.6765&sort=best-match-asc&skip=0&limit=25&user_key=4c7deee526e1bdd9d202c9e28cd0d0ac`).then(function(response) {
         displayDoctors(response);
       })
       .fail(function(error) {
