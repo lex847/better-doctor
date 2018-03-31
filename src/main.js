@@ -3,17 +3,17 @@ import './styles.css';
 
 const displaySpecialty = function(response) {
   if (response.data.length == 0) {
-    $('#results').text("There are no doctors specializing in that area.");
+    $('#results').append("<h1>There are no doctors specializing in that area.</h1>");
     } else {
       for(let i = 0; i < response.data.length; i++) {
 
       let doctor = "<strong>Doctor Name: </strong>" + response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
       let newPatients = "<strong>Accepting New Patients: </strong>" + response.data[i].practices[0].accepts_new_patients;
       let address = response.data[i].practices[0].visit_address.street + " " + "<br>" + response.data[i].practices[0].visit_address.city + ", " +  response.data[i].practices[0].visit_address.state + " " + "<br>" + response.data[i].practices[0].visit_address.zip;
-      let phone = response.data[i].practices[0].phones[0].number;
+      let phone = "<strong>Phone: </strong>" + response.data[i].practices[0].phones[0].number.match(/\d{3}(?=\d{2,3})|\d+/g).join("-");
       console.log(phone);
 
-      let websiteSearch = (website === undefined) ? "None" : response.data[i].practices[0].website;
+      let websiteSearch = (website === undefined) ? "No Website Available" : response.data[i].practices[0].website;
       let website = "<strong>Website: </strong>" + websiteSearch;
 
       $('#results').append(
@@ -31,16 +31,16 @@ const displaySpecialty = function(response) {
 
 const displayDoctors = function(response) {
   if (response.data.length == 0) {
-    $('#results').text("There are no doctors with that name.");
+    $('#results').append("<h1>There are no doctors with that name.</h1>");
     } else {
       for(let i = 0; i < response.data.length; i++) {
 
       let doctor = "<strong>Doctor Name: </strong>" + response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
       let newPatients = "<strong>Accepting New Patients: </strong>" + response.data[i].practices[0].accepts_new_patients;
       let address = response.data[i].practices[0].visit_address.street + " " + "<br>" + response.data[i].practices[0].visit_address.city + ", " +  response.data[i].practices[0].visit_address.state + " " + "<br>" + response.data[i].practices[0].visit_address.zip;
-      let phone = "<strong>Phone: </strong>" + response.data[i].practices[0].phones[0].number;
+      let phone = "<strong>Phone: </strong>" + response.data[i].practices[0].phones[0].number.match(/\d{3}(?=\d{2,3})|\d+/g).join("-");
       console.log(phone);
-      let websiteSearch = (website === undefined) ? "None" : response.data[i].practices[0].website;
+      let websiteSearch = (website === undefined) ? "No Website Available" : response.data[i].practices[0].website;
       let website = "<strong>Website: </strong>" + websiteSearch;
 
       $('#results').append(
@@ -50,7 +50,8 @@ const displayDoctors = function(response) {
         <p>${address}</p>
         <p>${phone}</p>
         <p>${website}</p>
-        </ol>`);
+        </ol>
+        <hr>`);
     }
   }
 }
