@@ -3,7 +3,7 @@ import './styles.css';
 
 const displaySpecialty = function(response) {
   if (response.data.length == 0) {
-    $('.results').text("There are no doctors specializing in that area.");
+    $('#results').text("There are no doctors specializing in that area.");
     } else {
       for(let i = 0; i < response.data.length; i++) {
 
@@ -31,7 +31,7 @@ const displaySpecialty = function(response) {
 
 const displayDoctors = function(response) {
   if (response.data.length == 0) {
-    $('.results').text("There are no doctors with that name.");
+    $('#results').text("There are no doctors with that name.");
     } else {
       for(let i = 0; i < response.data.length; i++) {
 
@@ -69,9 +69,7 @@ $(document).ready(function() {
     $("#doctor-name-form").hide();
 
     let newDoctorAPI = new doctorAPI(medicalIssue);
-    console.log(newDoctorAPI);
     newDoctorAPI.getSpecialty(medicalIssue, displaySpecialty);
-    console.log("reached");
     $("#results").show();
   });
 
