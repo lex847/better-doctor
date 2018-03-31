@@ -16,7 +16,7 @@ This application demonstrates asynchrony and calling the BetterDoctor API using 
 | :---------------| :---------------| :---------------|
 | Returns a list of doctors in the Portland area based on the medical search query. | "headache" | Returns list of doctors or "Sorry, there are no doctors specializing in that area." |
 | Returns a list of doctors in the Portland area based on the name search query. | "Hannah" | Returns list or "There are no doctors with that name." |
-| If the query response includes any doctors, the following information should be included about each doctor: first name, last name, address, phone number, website and whether or not the doctor is accepting new patients | "Lorem" | Lorem Ipsum, Is Accpeting New Patients?: Yes, address, phone number, website |
+| If the query response includes any doctors, the following information should be included about each doctor: first name, last name, address, phone number, website and whether or not the doctor is accepting new patients | "Hannah" | Hannah Hilbert, Accepting New Patients?: true, 1500 NE Irving St, Portland, OR 97232, Phone: 503-232-0138, Website: No Website Available |
 | If the API call results in an error (any message not a 200 OK), the application should return a notification that states what the error is. | Click Submit | There was an error processing your request: 400 error handling your request - Bad Request. Please try again. |
 | If the query response doesn't include any doctors (for instance, if no doctors meet the search criteria), the application should return a notification that states that no doctors meet the criteria. | "Big Bird" | There are no doctors with that name. |
 
