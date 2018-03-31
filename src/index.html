@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
     <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
@@ -9,26 +10,26 @@
   </head>
   <body>
     <div class="container">
-    <h1 id="header">Find a Doctor in Portland, OR</h1>
+      <h1 id="header">Find a Doctor in Portland, OR</h1>
 
-    <form id="medical-issue-form">
-      <label for="medicalIssue">Medical Issue</label>
-      <br>
-      <input type="text" name="medicalIssue" id="medicalIssue" placeholder="headache">
-      <button type="submit" name="button" id="button">Submit</button>
-    </form>
-      <br>
-      <br>
-    <form id="doctor-name-form">
-      <label for="doctorName">Search for a Doctor</label>
-      <br>
-      <input type="text" name="doctorName" id="doctorName" placeholder="name">
-      <button type="submit" name="button" id="button">Submit</button>
-    </form>
+      <form id="medical-issue-form">
+        <label for="medicalIssue">Medical Issue</label>
+        <br>
+        <input type="text" name="medicalIssue" id="medicalIssue" placeholder="headache">
+        <button type="submit" name="button" id="button">Submit</button>
+      </form>
+        <br>
+        <br>
+      <form id="doctor-name-form">
+        <label for="doctorName">Search for a Doctor</label>
+        <br>
+        <input type="text" name="doctorName" id="doctorName" placeholder="name">
+        <button type="submit" name="button" id="button">Submit</button>
+      </form>
 
-    <div id="results">
-      <h3>Below are your results: </h3>
-    </div>
+      <div class="card card-body" id="results">
+        <h3>Below are your results: </h3>
+      </div>
     </div>
   </body>
 </html>

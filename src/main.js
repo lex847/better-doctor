@@ -38,7 +38,7 @@ const displayDoctors = function(response) {
       let doctor = "<strong>Doctor Name: </strong>" + response.data[i].profile.first_name + " " + response.data[i].profile.last_name;
       let newPatients = "<strong>Accepting New Patients: </strong>" + response.data[i].practices[0].accepts_new_patients;
       let address = response.data[i].practices[0].visit_address.street + " " + "<br>" + response.data[i].practices[0].visit_address.city + ", " +  response.data[i].practices[0].visit_address.state + " " + "<br>" + response.data[i].practices[0].visit_address.zip;
-      let phone = response.data[i].practices[0].phones;
+      let phone = "<strong>Phone: </strong>" + response.data[i].practices[0].phones[0].number;
       console.log(phone);
       let websiteSearch = (website === undefined) ? "None" : response.data[i].practices[0].website;
       let website = "<strong>Website: </strong>" + websiteSearch;
@@ -48,7 +48,7 @@ const displayDoctors = function(response) {
         <h3>${doctor}</h3>
         <h3>${newPatients}</h3>
         <p>${address}</p>
-        <p>${phone[0].number}</p>
+        <p>${phone}</p>
         <p>${website}</p>
         </ol>`);
     }
