@@ -82,7 +82,7 @@ $(document).ready(function() {
   });
 
 // Doctor Name Search Form
-  $("#medical-issue-form").submit(function(event) {
+  $("#doctor-name-form").submit(function(event) {
     event.preventDefault();
 
     const doctorName = $("#doctorName").val();
